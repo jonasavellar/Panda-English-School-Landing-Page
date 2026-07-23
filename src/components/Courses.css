@@ -1,0 +1,89 @@
+.courses-section {
+  background: var(--bg-card);
+}
+
+.focuses-card {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.focuses-card h3 {
+  margin-bottom: 1rem;
+}
+
+.focuses-intro {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.focuses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.focus-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--accent-light);
+  border: 1px solid var(--border-light);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.focus-item:hover {
+  background: var(--text-primary);
+  color: var(--text-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.focus-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 0.5rem;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.focus-item:hover .focus-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-white);
+}
+
+.focus-label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.focuses-note {
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .focuses-card {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .focuses-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .focus-item {
+    padding: 0.875rem 1rem;
+  }
+}
