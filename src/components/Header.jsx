@@ -52,6 +52,12 @@ const Header = () => {
           </ul>
 
           <div className="nav-actions">
+            <a
+              href="https://app.pandaenglish.com.br/login"
+              className="portal-button desktop-only"
+            >
+              Portal Panda
+            </a>
             <a 
               href="https://www.instagram.com/pandaenglish.school/" 
               target="_blank" 
@@ -81,6 +87,11 @@ const Header = () => {
               <li><a onClick={() => scrollToSection('depoimentos')}>Depoimentos</a></li>
               <li><a onClick={() => scrollToSection('nosso-espaco')}>Nosso Espaço</a></li>
               <li><a onClick={() => scrollToSection('contato')}>Contato</a></li>
+              <li>
+                <a href="https://app.pandaenglish.com.br/login" className="mobile-portal">
+                  Portal Panda
+                </a>
+              </li>
               <li>
                 <a 
                   href="https://www.instagram.com/pandaenglish.school/" 

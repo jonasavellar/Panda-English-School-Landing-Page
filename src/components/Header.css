@@ -101,6 +101,26 @@
   transform: scale(1.1);
 }
 
+.portal-button {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 1.25rem;
+  border-radius: 999px;
+  background: var(--text-primary);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border: 1px solid var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.portal-button:hover {
+  background: transparent;
+  color: var(--text-primary);
+}
+
 .mobile-menu-button {
   display: none;
   background: none;
@@ -183,6 +203,10 @@
   .mobile-nav-links li a:hover {
     background: var(--accent-light);
     color: var(--text-primary);
+  }
+
+  .mobile-nav-links li a.mobile-portal {
+    font-weight: 700;
   }
 
   .mobile-instagram {
