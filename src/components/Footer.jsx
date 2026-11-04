@@ -82,7 +82,6 @@ const Footer = () => {
             {EMPRESA.razaoSocial} · CNPJ {EMPRESA.cnpj} ·{' '}
             <a href={POLITICA_PRIVACIDADE} target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
           </p>
-          <p className="footer-credit">Desenvolvido com 🐼 em Curvelo</p>
         </div>
       </div>
     </footer>);
