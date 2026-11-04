@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPin, Clock, Phone, Mail, Instagram } from 'lucide-react';
 import './Footer.css';
-import { EMPRESA, POLITICA_PRIVACIDADE } from '../empresa';
+import { EMPRESA, POLITICA_PRIVACIDADE, POLITICA_REEMBOLSO } from '../empresa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -80,7 +80,8 @@ const Footer = () => {
           <p>&copy; {currentYear} Panda English School. Todos os direitos reservados.</p>
           <p className="footer-legal">
             {EMPRESA.razaoSocial} · CNPJ {EMPRESA.cnpj} ·{' '}
-            <a href={POLITICA_PRIVACIDADE} target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
+            <a href={POLITICA_PRIVACIDADE} target="_blank" rel="noopener noreferrer">Política de Privacidade</a> ·{' '}
+            <a href={POLITICA_REEMBOLSO} target="_blank" rel="noopener noreferrer">Cancelamento e Reembolso</a>
           </p>
         </div>
       </div>

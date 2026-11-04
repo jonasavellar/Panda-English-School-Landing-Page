@@ -7,3 +7,4 @@ export const EMPRESA = {
 // A Política de Privacidade fica no Portal e vale para o site e para o Portal.
 export const POLITICA_PRIVACIDADE = 'https://app.pandaenglish.com.br/privacidade';
 export const TERMOS_DE_USO = 'https://app.pandaenglish.com.br/termos';
+export const POLITICA_REEMBOLSO = 'https://app.pandaenglish.com.br/reembolso';
