@@ -3,7 +3,7 @@
 }
 
 .highlight-live {
-  color: #FF0000;
+  color: #CC0000; /* contraste AA */
   font-weight: 700;
   position: relative;
   display: inline-block;
@@ -41,7 +41,7 @@
 }
 
 .intro-icon {
-  color: #FF0000;
+  color: #CC0000; /* contraste AA */
   animation: blink 1.5s ease-in-out infinite;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .text-live {
-  color: #FF0000;
+  color: #CC0000; /* contraste AA */
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.05em;
@@ -71,7 +71,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #FF0000;
+  background: #CC0000; /* contraste AA com texto branco */
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 2rem;

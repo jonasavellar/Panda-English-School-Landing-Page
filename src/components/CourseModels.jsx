@@ -1,6 +1,7 @@
 import React from 'react';
 import { School, Laptop } from 'lucide-react';
 import './CourseModels.css';
+import { clicavel } from '../acessibilidade';
 
 const CourseModels = () => {
   const scrollToSection = (id) => {
@@ -30,9 +31,9 @@ const CourseModels = () => {
 
         <div className="models-grid">
           {/* Escola Presencial */}
-          <div 
-            className="model-card card" 
-            onClick={() => scrollToSection('presencial')}
+          <div
+            className="model-card card"
+            {...clicavel(() => scrollToSection('presencial'), 'Ver detalhes da Escola Presencial')}
           >
             <div className="model-image-wrapper">
               <img 
@@ -59,9 +60,9 @@ const CourseModels = () => {
           </div>
 
           {/* Escola VIP Online */}
-          <div 
-            className="model-card card" 
-            onClick={() => scrollToSection('vip-online')}
+          <div
+            className="model-card card"
+            {...clicavel(() => scrollToSection('vip-online'), 'Ver detalhes da Escola VIP Online')}
           >
             <div className="model-image-wrapper">
               <img 

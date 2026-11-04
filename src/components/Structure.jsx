@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Building2, X } from 'lucide-react';
 import './Structure.css';
+import { clicavel } from '../acessibilidade';
 
 const Structure = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+
+  // Esc fecha a foto ampliada.
+  useEffect(() => {
+    if (!selectedImage) return undefined;
+    const aoTeclar = (e) => { if (e.key === 'Escape') setSelectedImage(null); };
+    window.addEventListener('keydown', aoTeclar);
+    return () => window.removeEventListener('keydown', aoTeclar);
+  }, [selectedImage]);
 
   const images = [
   {
@@ -56,7 +65,7 @@ const Structure = () => {
           <div
             key={index}
             className="gallery-item"
-            onClick={() => setSelectedImage(image)}>
+            {...clicavel(() => setSelectedImage(image), `Ampliar foto: ${image.title}`)}>
 
               <img src={image.url} alt={image.alt} />
               <div className="gallery-overlay">
@@ -81,8 +90,8 @@ const Structure = () => {
 
       {/* Lightbox Modal */}
       {selectedImage &&
-      <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
+      <div className="lightbox" role="dialog" aria-modal="true" aria-label={selectedImage.title} onClick={() => setSelectedImage(null)}>
+          <button className="lightbox-close" onClick={() => setSelectedImage(null)} aria-label="Fechar foto" autoFocus>
             <X size={32} />
           </button>
           <img src={selectedImage.url} alt={selectedImage.alt} className="lightbox-image" />

@@ -266,7 +266,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #25D366;
+  background: #075E54; /* verde-escuro do WhatsApp: contraste AA com a inicial branca */
   color: white;
   display: flex;
   align-items: center;

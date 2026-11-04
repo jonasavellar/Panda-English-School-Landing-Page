@@ -124,3 +124,12 @@
     padding-top: 1.5rem;
   }
 }
+.footer-legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-legal a:hover {
+  color: #FFFFFF;
+}

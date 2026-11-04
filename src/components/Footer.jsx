@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Clock, Phone, Mail, Instagram } from 'lucide-react';
 import './Footer.css';
+import { EMPRESA, POLITICA_PRIVACIDADE } from '../empresa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -77,6 +78,10 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; {currentYear} Panda English School. Todos os direitos reservados.</p>
+          <p className="footer-legal">
+            {EMPRESA.razaoSocial} · CNPJ {EMPRESA.cnpj} ·{' '}
+            <a href={POLITICA_PRIVACIDADE} target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
+          </p>
           <p className="footer-credit">Desenvolvido com 🐼 em Curvelo</p>
         </div>
       </div>

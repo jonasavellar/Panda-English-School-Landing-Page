@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Instagram } from 'lucide-react';
 import './Header.css';
+import { clicavel } from '../acessibilidade';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +34,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <nav className="nav">
-          <div className="logo-container" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div className="logo-container" {...clicavel(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 'Voltar ao topo')}>
             <img 
               src="/images/logo-panda.png" 
               alt="Panda English School" 
@@ -70,7 +71,8 @@ const Header = () => {
             <button 
               className="mobile-menu-button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Menu"
+              aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

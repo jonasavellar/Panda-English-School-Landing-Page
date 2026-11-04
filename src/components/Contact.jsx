@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, Instagram } from 'lucide-react';
+import { POLITICA_PRIVACIDADE } from '../empresa';
 import './Contact.css';
 
 const Contact = () => {
+  // O mapa do Google só carrega quando a pessoa pede: sem isso, abrir o site já envia dados do visitante ao Google.
+  const [mostrarMapa, setMostrarMapa] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -163,7 +166,9 @@ const Contact = () => {
               </button>
 
               <p className="form-note body-small">
-                Ao enviar, você será redirecionado para o WhatsApp com sua mensagem preenchida.
+                Ao enviar, você será redirecionado para o WhatsApp com sua mensagem preenchida. Seus dados são usados
+                só para responder ao seu contato. Veja nossa{' '}
+                <a href={POLITICA_PRIVACIDADE} target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
               </p>
             </form>
           </div>
@@ -171,6 +176,7 @@ const Contact = () => {
 
         {/* Map */}
         <div className="map-container">
+          {mostrarMapa ?
           <iframe
             src="https://www.google.com/maps?q=R.+Maj.+Felic%C3%ADssimo+Viana%2C+376%2C+Centro%2C+Curvelo+-+MG%2C+35790-231&output=embed"
             width="100%"
@@ -180,7 +186,27 @@ const Contact = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Localização Panda English School">
-          </iframe>
+          </iframe> :
+          <div className="map-placeholder">
+            <MapPin size={36} aria-hidden="true" />
+            <p className="map-placeholder-endereco">
+              R. Maj. Felicíssimo Viana, 376 – Centro, Curvelo – MG
+            </p>
+            <div className="map-placeholder-acoes">
+              <button type="button" className="btn-primary" onClick={() => setMostrarMapa(true)}>
+                Ver mapa aqui
+              </button>
+              <a
+                className="map-placeholder-link"
+                href="https://www.google.com/maps/search/?api=1&query=R.+Maj.+Felic%C3%ADssimo+Viana%2C+376%2C+Centro%2C+Curvelo+-+MG"
+                target="_blank"
+                rel="noopener noreferrer">
+                Abrir no Google Maps
+              </a>
+            </div>
+            <p className="map-placeholder-nota body-small">O mapa é fornecido pelo Google e só carrega se você clicar.</p>
+          </div>
+          }
         </div>
       </div>
     </section>);
